@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css ">
+    <title>Catalogo prodotti</title>
+</head>
+<body>
+    <h1>Catalogo prodotti</h1>
+    <table border="1">
+        <tr>
+            <th>Codice</th>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Anno Produzione</th>
+            <th>Quantità</th>
+            <th>Azioni</th>
+        </tr>
+        <tr th:each="prodotti : ${prodotti}">
+            <td th:text="${prodotti.codice}"></td>
+            <td th:text="${prodotti.nome}"></td>
+            <td th:text="${prodotti.categoria}"></td>
+            <td th:text="${prodotti.annoProduzione}"></td>
+            <td th:text="${prodotti.quantita}"></td>
+            <td><a th:href="@{/prodotto/{codice}(codice=${prodotto.codice})}">Dettagli</a></td>
+        </tr>
+    </table>
+</body>
+</html>
